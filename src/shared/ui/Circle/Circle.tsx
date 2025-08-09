@@ -1,19 +1,25 @@
-import React from 'react';
+import React from "react";
 
 interface ICircle {
-  forwardRef?: React.RefObject<SVGCircleElement>;
+  forwardRef?: React.RefObject<SVGCircleElement | null>;
   strokeWidth?: number;
   strokeOpacity?: number;
   radius?: number;
   color?: string;
 }
 
-const Circle = ({ forwardRef, strokeOpacity = 0.2, strokeWidth = 1, radius = 265, color = 'black' }: ICircle) => {
+const Circle = ({
+  forwardRef,
+  strokeOpacity = 0.2,
+  strokeWidth = 1,
+  radius = 265,
+  color = "black",
+}: ICircle) => {
   return (
     <svg
       viewBox={`0 0 ${radius * 2} ${radius * 2}`}
       xmlns="http://www.w3.org/2000/svg"
-      style={{ position: 'absolute' }}
+      style={{ position: "absolute" }}
     >
       <path
         ref={forwardRef}

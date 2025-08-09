@@ -10,7 +10,7 @@ gsap.registerPlugin(MotionPathPlugin);
 interface IUseTimelineMoveSelect<T> {
   currentAgeId: number;
   setCurrentAgeId: (id: number) => void;
-  refPath: React.RefObject<SVGCircleElement>;
+  refPath: React.RefObject<SVGCircleElement | null>;
   timelineAges: T[];
 }
 

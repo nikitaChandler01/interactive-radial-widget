@@ -1,8 +1,8 @@
-import React from 'react';
-import './PageGrid.scss';
+import React from "react";
+import "./PageGrid.scss";
 
 interface IPageGrid {
-  circleRef: React.RefObject<SVGCircleElement>;
+  circleRef: React.RefObject<SVGCircleElement | null>;
 }
 
 const PageGrid = ({ circleRef }: IPageGrid) => {

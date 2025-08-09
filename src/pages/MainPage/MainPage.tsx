@@ -12,7 +12,7 @@ import { TIMELINE_MOCKS } from "@shared/mocks/TimelineMocks";
 
 const MainPage = () => {
   const pageTitle = "Исторические \n даты";
-  const circleRef = useRef<SVGCircleElement>(null);
+  const circleRef = useRef<SVGCircleElement | null>(null);
   const [currentAgeId, setCurrentAgeId] = useState<number>(1);
   const ageId = TIMELINE_MOCKS[currentAgeId - 1].id;
   const ageTitle = TIMELINE_MOCKS[currentAgeId - 1].title;

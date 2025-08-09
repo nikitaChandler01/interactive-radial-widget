@@ -6,7 +6,7 @@ import type { TimelineMock } from "@shared/mocks/TimelineMocks";
 interface ITimelineSelectWrapper<T> {
   currentAgeId: number;
   setCurrentAgeId: (id: number) => void;
-  refPath: React.RefObject<SVGCircleElement>;
+  refPath: React.RefObject<SVGCircleElement | null>;
   timelineAges: T[];
 }
 
