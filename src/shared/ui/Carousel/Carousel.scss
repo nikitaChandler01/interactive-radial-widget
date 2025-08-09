@@ -1,0 +1,137 @@
+@use "/src/mixins" as mixin;
+$position-of-buttons: calc(var(--span-size) / 4);
+$buttons-size: calc(var(--span-size) / 2);
+
+.swiper {
+    width: 100%;
+    @include mixin.vh(135, "min-height");
+    padding: 0 var(--span-size);
+    box-sizing: border-box !important;
+    position: relative;
+
+    @media (max-width: 320px) {
+        height: fit-content;
+        padding: 0;
+        position: unset;
+
+        &-slide {
+            margin-right: 25px;
+            width: 170px !important;
+
+
+            &:nth-child(2n) {
+                width: 250px !important;
+            }
+        }
+
+    }
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: var(--span-size);
+        background-color: var(--bg-creamy);
+        z-index: 5;
+        pointer-events: none;
+
+        @media (max-width: 320px) {
+            display: none !important;
+        }
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        right: 0;
+    }
+
+    &-wrapper {
+        box-sizing: border-box;
+        cursor: grab;
+        overflow: visible;
+
+        &:active {
+            cursor: grabbing;
+        }
+
+    }
+
+    &-slide {
+        margin-right: var(--span-size);
+        width: calc(var(--span-size) * 4);
+
+        &:nth-child(2n) {
+            width: calc(var(--span-size) * 5);
+        }
+
+        &-next,
+        &-prev {
+            @media (max-width: 320px) {
+                position: relative;
+                opacity: 40%;
+                transition: all 0.3s ease-in-out;
+
+            }
+        }
+
+    }
+
+    & &-button-next,
+    &-button-prev {
+        cursor: pointer;
+        margin-top: 0;
+        @include mixin.vh(41, "top");
+        width: $buttons-size;
+        height: $buttons-size;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 10;
+        box-shadow: 0 0 15px rgba(var(--blue), 0.1);
+
+        @media (max-width: 320px) {
+            display: none !important;
+            width: 0;
+            height: 0;
+            cursor: none;
+        }
+
+    }
+
+    &-button-next::after,
+    &-button-prev::after {
+        content: url('../../../assets/Arrow.svg');
+        height: 10px;
+        width: 5px;
+        font-size: 0;
+        margin-left: -1px;
+        margin-top: -1px;
+    }
+
+    &-button-prev::after {
+        transform: scaleX(-1);
+    }
+
+    &-button-disabled {
+        display: none !important;
+    }
+
+    &-button-prev {
+        left: $position-of-buttons;
+    }
+
+    &-button-next {
+        right: $position-of-buttons;
+    }
+
+
+
+}

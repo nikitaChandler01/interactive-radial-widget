@@ -1,0 +1,31 @@
+@use "/src/mixins" as mixin;
+
+.timeline-option {
+    position: relative;
+    z-index: 11;
+    @include mixin.vw(6, "width");
+    @include mixin.vw(6, "height");
+    background: var(--font-color);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    @include mixin.vw(20, "font-size");
+    font-size: calc(var(--font-size) / 8);
+    cursor: pointer;
+    z-index: 15;
+
+    & .appearing-disappearing-text {
+        position: absolute;
+        @include mixin.vw(20, "font-size");
+        @include mixin.vw(10, "left");
+        top: 50%;
+        transform: translateY(-50%) scale(0.125);
+        transform-origin: left center;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}

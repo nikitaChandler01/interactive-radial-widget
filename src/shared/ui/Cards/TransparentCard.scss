@@ -1,0 +1,36 @@
+@use "/src/mixins" as mixin;
+
+.transparent-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include mixin.vh(15, "gap");
+
+    &:nth-child(2n) {}
+
+
+    &__title {
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+        @include mixin.vw(25, "font-size");
+        color: var(--blue);
+    }
+
+    &__content {
+        @include mixin.vw(20, "font-size");
+
+    }
+
+    @media (max-width: 320px) {
+        &__title {
+            font-size: 18px;
+        }
+
+        &__content {
+            font-size: 14px;
+            line-height: 145%;
+        }
+    }
+}

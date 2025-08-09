@@ -1,0 +1,34 @@
+@use "/src/mixins" as mixin;
+
+.events {
+    gap: 14px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__title {
+        display: none;
+
+        @media (max-width: 320px) {
+            font-weight: 600;
+            display: block;
+            position: absolute;
+            top: -35px
+        }
+    }
+
+
+
+    &__divider {
+        opacity: 20;
+        width: 100%;
+        height: 1px;
+        top: 0;
+        background: #C7CDD9;
+
+        @media (min-width: 321px) {
+            display: none;
+        }
+
+    }
+}

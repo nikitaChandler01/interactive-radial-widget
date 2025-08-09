@@ -1,0 +1,28 @@
+   @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+   :root {
+       --bg-primary: #FFFFFF;
+       --bg-creamy: #F4F5F9;
+       --font-color: #42567A;
+       --font-color-transparent: #42567a80;
+       --span-size: calc(100vw / 24);
+       --blue: #3877EE;
+       --pink: #EF5DA8;
+   }
+
+
+   html {
+       font-family: "PT Sans", sans-serif;
+       color: var(--font-color);
+       font-weight: 400;
+       background-color: var(--bg-creamy);
+   }
+
+   body {
+       margin: 0 auto;
+   }
+
+   .cursor-pointer {
+       cursor: pointer;
+   }

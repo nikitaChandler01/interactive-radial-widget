@@ -1,0 +1,25 @@
+@use "/src/mixins" as mixin;
+
+.timeline-years {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 11;
+    left: 0;
+    right: 0;
+    @include mixin.vw(217, "padding-left");
+    @include mixin.vw(250, "padding-right");
+    @include mixin.vh(400, "top");
+
+    @media (max-width: 320px) {
+        padding: 0;
+        position: relative;
+        top: unset;
+
+
+        & .odometer-counter {
+            font-size: 56px;
+        }
+    }
+
+}

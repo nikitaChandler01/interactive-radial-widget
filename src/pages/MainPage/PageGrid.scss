@@ -1,0 +1,51 @@
+@use '/src/mixins' as mixins;
+$border-value: 1px solid rgba(0, 0, 0, 0.10);
+
+.grid-box-container {
+
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: calc(100vh - 2px);
+    pointer-events: none;
+    width: calc(100% - var(--span-size) * 6);
+    border-left: $border-value;
+    border-right: $border-value;
+
+    &__upper {
+        @include mixins.vh(480, "height");
+        display: flex;
+        border-bottom: $border-value;
+
+        & .default-grid-box:first-child {
+            @include mixins.vw(720, "width");
+            border-right: $border-value;
+            position: relative;
+        }
+    }
+
+    &__down {
+        @include mixins.vh(600, "height");
+        height: calc(var(--height) - 1px);
+        display: flex;
+
+        & .default-grid-box:first-child {
+            border-right: $border-value;
+        }
+    }
+
+    @media (max-width: 320px) {
+        position: relative;
+        display: none;
+    }
+}
+
+.default-grid-box {
+    width: 50%;
+
+    @media (max-width: 320px) {
+        position: relative;
+        display: none;
+    }
+}

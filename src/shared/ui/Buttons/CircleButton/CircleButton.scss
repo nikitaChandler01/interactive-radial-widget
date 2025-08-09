@@ -1,0 +1,37 @@
+@use "/src/mixins" as mixin;
+
+.circle-button {
+    @include mixin.vw(50, "width");
+    @include mixin.vw(50, "height");
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid var(--font-color-transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 50%;
+
+    @media (max-width: 320px) {
+        height: 25px;
+        width: 25px;
+    }
+
+    &:hover {
+        opacity: 100%;
+    }
+
+    &--next::after,
+    &--prev::after {
+        content: url('/src/assets/Arrow.svg');
+        height: 12.5px;
+        width: 6.25px;
+        font-size: 0;
+        stroke-width: 2px;
+        margin-left: -1px;
+    }
+
+    &--prev::after {
+        transform: scaleX(-1);
+    }
+
+}
