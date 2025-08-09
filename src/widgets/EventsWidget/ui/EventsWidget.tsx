@@ -1,8 +1,8 @@
-import { EventsMock } from '@shared/mocks/EventsMocks';
-import TransparentCard from '@shared/ui/Cards/TransparentCard';
-import Carousel from '@shared/ui/Carousel/Carousel';
-import { useAnimatedEventsWidget } from '../model';
-import './EventsWidget.scss';
+import type { EventsMock } from "@shared/mocks/EventsMocks";
+import TransparentCard from "@shared/ui/Cards/TransparentCard";
+import Carousel from "@shared/ui/Carousel/Carousel";
+import { useAnimatedEventsWidget } from "../model";
+import "./EventsWidget.scss";
 
 interface IEventsWidget<T> {
   titles: Record<number, string>;
@@ -32,7 +32,9 @@ const EventsWidget = <T extends EventsMock>({
       <Carousel
         swiperRef={swiperRef}
         items={events}
-        itemRenderer={(item) => <TransparentCard title={`${item.year}`} content={item.eventDesc} />}
+        itemRenderer={(item) => (
+          <TransparentCard title={`${item.year}`} content={item.eventDesc} />
+        )}
       />
     </div>
   );

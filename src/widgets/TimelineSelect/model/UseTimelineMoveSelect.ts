@@ -1,10 +1,10 @@
-import { TimelineMock } from '@shared/mocks/TimelineMocks';
-import gsap from 'gsap';
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import React, { useEffect, useRef } from 'react';
-import { rotationCircleDuration } from '../constants';
-import { decreaseTarget, increaseTarget, moveForPath } from '../service';
-import useResize from '@shared/lib/useResize';
+import gsap from "gsap";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import React, { useEffect, useRef } from "react";
+import { rotationCircleDuration } from "../constants";
+import { decreaseTarget, increaseTarget, moveForPath } from "../service";
+import useResize from "@shared/lib/useResize";
+import type { TimelineMock } from "@shared/mocks/TimelineMocks";
 gsap.registerPlugin(MotionPathPlugin);
 
 interface IUseTimelineMoveSelect<T> {
@@ -36,7 +36,7 @@ export const useTimelineMoveSelect = <T extends TimelineMock>({
         startPoint: timelineAges.findIndex((item) => item.id === currentAgeId),
         endPoint: timelineAges.findIndex((item) => item.id === currentAgeId),
         duration: rotationCircleDuration,
-        ease: 'power1.out',
+        ease: "power1.out",
       });
     }
     increaseTarget(dotsRef.current[firstId]);
@@ -73,7 +73,7 @@ export const useTimelineMoveSelect = <T extends TimelineMock>({
         startPoint: timelineAges.findIndex((item) => item.id === prevId),
         endPoint: timelineAges.findIndex((item) => item.id === newId),
         duration: 0.6,
-        ease: 'power1.out',
+        ease: "power1.out",
       });
     }
   };

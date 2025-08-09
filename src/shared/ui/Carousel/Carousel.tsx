@@ -3,7 +3,7 @@ import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { SwiperRef } from "swiper/react";
 import "./Carousel.scss";
-import "swiper/swiper";
+import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 

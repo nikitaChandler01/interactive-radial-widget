@@ -1,8 +1,8 @@
-import useResize from '@shared/lib/useResize';
-import { EventsMock } from '@shared/mocks/EventsMocks';
-import gsap from 'gsap';
-import { useEffect, useRef, useState } from 'react';
-import { SwiperRef } from 'swiper/react';
+import useResize from "@shared/lib/useResize";
+import type { EventsMock } from "@shared/mocks/EventsMocks";
+import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
+import type { SwiperRef } from "swiper/react";
 
 interface IUseAnimatedEventsWidget<T> {
   mockEvents: T;
@@ -40,7 +40,7 @@ export const useAnimatedEventsWidget = <T extends EventsMock>({
         fadeTween.current = gsap.fromTo(
           containerRef.current,
           { opacity: 0, y: isMobile ? 20 : undefined },
-          { opacity: 1, duration: timeOfAnimation, y: 0 },
+          { opacity: 1, duration: timeOfAnimation, y: 0 }
         );
       },
     });

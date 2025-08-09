@@ -1,4 +1,4 @@
-import { TimelineMock } from '@shared/mocks/TimelineMocks';
+import type { TimelineMock } from '@shared/mocks/TimelineMocks';
 import { AppearingDisappearingText } from '@shared/ui/Typography/AppearingDisappearingText';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
