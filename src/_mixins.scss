@@ -5,7 +5,26 @@
 }
 
 @mixin vw($size, $property) {
-    $design-height: 1920;
-    --#{$property}: calc(100vw * (#{$size} / #{$design-height}));
+    $design-width: 1920;
+    --#{$property}: calc(100vw * (#{$size} / #{$design-width}));
     #{$property}: var(--#{$property});
+}
+
+@mixin titleLvl($lvl) {
+    .title--lvl-#{$lvl} {
+        @include vw(56, 'base-font-size');
+        font-size: calc(var(--base-font-size) * (#{$lvl} / 5));
+    }
+}
+
+@mixin justifyText($justify) {
+    .justify-#{$justify} {
+        text-align: #{$justify};
+    }
+}
+
+@mixin alignText($align) {
+    .align-#{$align} {
+        vertical-align: #{$align};
+    }
 }

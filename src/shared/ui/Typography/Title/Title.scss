@@ -1,0 +1,12 @@
+@use "/src/mixins" as mixin;
+
+@for $i from 1 through 5 {
+    @include mixin.titleLvl($i);
+}
+
+
+.title {
+    font-weight: bold;
+    margin: 0.5rem 0;
+    width: 100%;
+}

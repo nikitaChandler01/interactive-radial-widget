@@ -1,28 +1,74 @@
-   @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@use "mixins" as mixin;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@include mixin.justifyText("left");
+@include mixin.justifyText("right");
+@include mixin.justifyText("center");
+@include mixin.alignText("top");
+@include mixin.alignText("middle");
+@include mixin.alignText("bottom");
 
-   :root {
-       --bg-primary: #FFFFFF;
-       --bg-creamy: #F4F5F9;
-       --font-color: #42567A;
-       --font-color-transparent: #42567a80;
-       --span-size: calc(100vw / 24);
-       --blue: #3877EE;
-       --pink: #EF5DA8;
-   }
+$primary-color: #3877EE;
+
+:root {
+    --bg-primary: #FFFFFF;
+    --bg-creamy: #F4F5F9;
+    --font-color: #42567A;
+    --font-color-transparent: #42567a80;
+    --span-size: calc(100vw / 24);
+    --blue: #3877EE;
+    --pink: #EF5DA8;
 
 
-   html {
-       font-family: "PT Sans", sans-serif;
-       color: var(--font-color);
-       font-weight: 400;
-       background-color: var(--bg-creamy);
-   }
+}
 
-   body {
-       margin: 0 auto;
-   }
 
-   .cursor-pointer {
-       cursor: pointer;
-   }
+html {
+    font-family: "PT Sans", sans-serif;
+    color: var(--font-color);
+    font-weight: 400;
+    background-color: var(--bg-creamy);
+}
+
+body {
+    margin: 0 auto;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input {
+    border-radius: 8px;
+    padding: 8px 16px;
+    border: none;
+    border: 1px solid lighten($primary-color, 30);
+    box-sizing: border-box !important;
+    font-size: 16px;
+    transition: all 0.2s ease;
+
+    &:active,
+    &:focus,
+    &:hover {
+        border: 1px solid $primary-color;
+        outline: 1px solid $primary-color;
+    }
+
+    &[type='submit'] {
+        background: $primary-color;
+        color: white;
+        border: none;
+        outline: none;
+
+        &:hover {
+            background: lighten($primary-color, 10%);
+        }
+    }
+}

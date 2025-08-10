@@ -1,4 +1,4 @@
-import './HighlightTitle.scss';
+import "./HighlightTitle.scss";
 interface IHighlightTitle {
   text: string;
 }

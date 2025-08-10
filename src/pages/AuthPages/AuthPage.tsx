@@ -1,10 +1,13 @@
 import { CenterBox } from "@shared/ui/Box";
 import "./AuthPage.scss";
+import { AuthWidget } from "@widgets/AuthWidgets";
 
 const AuthPage = () => {
   return (
     <div className="auth-page">
-      <CenterBox>auth</CenterBox>
+      <CenterBox>
+        <AuthWidget />
+      </CenterBox>
     </div>
   );
 };
