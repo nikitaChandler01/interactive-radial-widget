@@ -13,7 +13,7 @@ export const useSignUp = () => {
       .then((response) => {
         return {
           name: userData.name,
-          email: userData.email
+          email: userData.email,
           access_token: getHash(userData.password),
         };
       })
