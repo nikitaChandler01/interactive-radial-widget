@@ -1,4 +1,4 @@
-@use "/src/mixins" as mixin;
+@use '/src/styles/mixins' as mixin;
 
 .odometer-counter {
     @include mixin.vw(200, "font-size");

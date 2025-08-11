@@ -1,11 +1,12 @@
-@use "/src/mixins" as mixin;
+@use '/src/styles/mixins' as mixin;
+@use "/src/styles/variables";
 
 .circle-button {
     @include mixin.vw(50, "width");
     @include mixin.vw(50, "height");
     aspect-ratio: 1;
     border-radius: 50%;
-    border: 1px solid var(--font-color-transparent);
+    border: 1px solid variables.$font-color-transparent;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,8 +1,9 @@
-@use "/src/mixins" as mixin;
+@use '/src/styles/mixins' as mixin;
+@use "/src/styles/variables";
 
 .timeline-control {
     display: flex;
-    padding: 0 var(--span-size);
+    padding: 0 variables.$span-size;
     position: relative;
 
 

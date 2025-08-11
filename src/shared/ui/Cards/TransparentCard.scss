@@ -1,4 +1,5 @@
-@use "/src/mixins" as mixin;
+@use '/src/styles/mixins' as mixin;
+@use '/src/styles/variables';
 
 .transparent-card {
     width: 100%;
@@ -15,7 +16,7 @@
         padding: 0;
         margin: 0;
         @include mixin.vw(25, "font-size");
-        color: var(--blue);
+        color: variables.$font-color;
     }
 
     &__content {

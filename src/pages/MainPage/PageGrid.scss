@@ -1,4 +1,6 @@
-@use '/src/mixins' as mixins;
+@use "/src/styles/variables";
+@use '/src/styles/mixins' as mixins;
+
 $border-value: 1px solid rgba(0, 0, 0, 0.10);
 
 .grid-box-container {
@@ -9,7 +11,7 @@ $border-value: 1px solid rgba(0, 0, 0, 0.10);
     bottom: 0;
     height: calc(100vh - 2px);
     pointer-events: none;
-    width: calc(100% - var(--span-size) * 6);
+    width: calc(100% - variables.$span-size * 6);
     border-left: $border-value;
     border-right: $border-value;
 

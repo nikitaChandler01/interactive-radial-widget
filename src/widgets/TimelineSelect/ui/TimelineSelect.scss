@@ -1,11 +1,12 @@
-@use "/src/mixins" as mixin;
+@use '/src/styles/mixins' as mixin;
+@use "/src/styles/variables";
 
 .timeline-option {
     position: relative;
     z-index: 11;
     @include mixin.vw(6, "width");
     @include mixin.vw(6, "height");
-    background: var(--font-color);
+    background: variables.$font-color;
     border-radius: 50%;
     aspect-ratio: 1;
     display: flex;

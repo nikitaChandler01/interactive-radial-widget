@@ -1,10 +1,13 @@
-@use "/src/mixins" as mixin;
+@use '/src/styles/mixins' as mixin;
+@use '/src/styles/variables';
+
+
 
 .highlight-title {
     display: flex;
 
     &__gradient-box {
-        background: linear-gradient(to bottom, var(--blue) 0%, var(--pink) 100%);
+        background: linear-gradient(to bottom, variables.$primary-color 0%, variables.$secondary-color 100%);
         height: 100%;
 
         @include mixin.vw(5, "width");
@@ -20,7 +23,7 @@
         margin: 0;
         padding: 0;
         text-wrap: wrap;
-        margin-left: var(--span-size);
+        margin-left: variables.$span-size;
         @include mixin.vw(56, "font-size");
         line-height: 120%;
 

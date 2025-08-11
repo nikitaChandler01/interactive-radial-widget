@@ -1,12 +1,14 @@
+@use "/src/styles/variables";
+
 .layout {
     height: 100vh;
 }
 
 .layout__header {
     height: 64px;
-    background-color: var(--bg-creamy);
+    background-color: variables.$bg-creamy;
 }
 
 .layout__content {
-    background-color: var(--bg-creamy);
+    background-color: variables.$bg-creamy;
 }

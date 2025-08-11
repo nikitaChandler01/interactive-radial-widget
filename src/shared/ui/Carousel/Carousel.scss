@@ -1,11 +1,12 @@
-@use "/src/mixins" as mixin;
-$position-of-buttons: calc(var(--span-size) / 4);
-$buttons-size: calc(var(--span-size) / 2);
+@use '/src/styles/mixins' as mixin;
+@use "/src/styles/variables";
+$position-of-buttons: calc(variables.$span-size / 4);
+$buttons-size: calc(variables.$span-size / 2);
 
 .swiper {
     width: 100%;
     @include mixin.vh(135, "min-height");
-    padding: 0 var(--span-size);
+    padding: 0 variables.$span-size;
     box-sizing: border-box !important;
     position: relative;
 
@@ -32,8 +33,8 @@ $buttons-size: calc(var(--span-size) / 2);
         position: absolute;
         top: 0;
         bottom: 0;
-        width: var(--span-size);
-        background-color: var(--bg-creamy);
+        width: variables.$span-size;
+        background-color: variables.$bg-creamy;
         z-index: 5;
         pointer-events: none;
 
@@ -62,11 +63,11 @@ $buttons-size: calc(var(--span-size) / 2);
     }
 
     &-slide {
-        margin-right: var(--span-size);
-        width: calc(var(--span-size) * 4);
+        margin-right: variables.$span-size;
+        width: calc(variables.$span-size) * 4;
 
         &:nth-child(2n) {
-            width: calc(var(--span-size) * 5);
+            width: calc(variables.$span-size) * 5;
         }
 
         &-next,
@@ -95,7 +96,7 @@ $buttons-size: calc(var(--span-size) / 2);
         align-items: center;
         position: absolute;
         z-index: 10;
-        box-shadow: 0 0 15px rgba(var(--blue), 0.1);
+        box-shadow: 0 0 15px rgba(variables.$primary-color, 0.1);
 
         @media (max-width: 320px) {
             display: none !important;
