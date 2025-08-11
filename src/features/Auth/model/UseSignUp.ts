@@ -12,7 +12,8 @@ export const useSignUp = () => {
       .add(userData)
       .then((response) => {
         return {
-          ...userData,
+          name: userData.name,
+          email: userData.email,
           access_token: getHash(userData.password),
         };
       })
