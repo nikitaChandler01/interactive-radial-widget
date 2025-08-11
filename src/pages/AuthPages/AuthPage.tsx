@@ -1,6 +1,6 @@
 import { CenterBox } from "@shared/ui/Box";
-import "./AuthPage.scss";
 import { AuthWidget } from "@widgets/AuthWidgets";
+import "./AuthPage.scss";
 
 const AuthPage = () => {
   return (
